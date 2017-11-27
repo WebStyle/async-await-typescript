@@ -1,0 +1,31 @@
+{
+  "name": "async-await-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx webpack-dev-server",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebStyle/async-await-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebStyle/async-await-typescript/issues"
+  },
+  "homepage": "https://github.com/WebStyle/async-await-typescript#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.0",
+    "html-webpack-plugin": "^2.30.1",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.5"
+  },
+  "dependencies": {
+    "axios": "^0.17.1"
+  }
+}
