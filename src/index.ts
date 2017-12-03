@@ -1,6 +1,7 @@
-import axios, { AxiosResponse } from 'axios';
-import Comment from "./mappers/Comment";
-import User from "./mappers/User";
+import axios, {AxiosResponse} from 'axios';
+import Comment from './mappers/Comment';
+import User from './mappers/User';
+import Post from './mappers/Post';
 
 /**
  * Entry point
@@ -8,9 +9,11 @@ import User from "./mappers/User";
  */
 async function main() {
     let users: Array<User> = await getUsers();
+    let posts: Array<Post> = await getPosts();
     let comments: Array<Comment> = await getComments();
 
     console.log('Users', users);
+    console.log('Posts', posts);
     console.log('Comments', comments);
 }
 
@@ -38,6 +41,19 @@ async function getComments(): Promise<Array<Comment>> {
         .data
         .forEach((comment: Comment) => comments.push(new Comment(comment.id, comment.name, comment.body, comment.email, comment.postId)));
     return comments;
+}
+
+/**
+ * Load posts
+ * @returns {Promise<Array<Post>>}
+ */
+async function getPosts(): Promise<Array<Post>> {
+    let response: AxiosResponse = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    let posts: Array<Post> = [];
+    response
+        .data
+        .forEach((post: Post) => posts.push(new Post(post.userId, post.id, post.title, post.body)));
+    return posts;
 }
 
 /**
