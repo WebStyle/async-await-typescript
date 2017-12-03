@@ -4,8 +4,9 @@ import User from "./mappers/User";
 
 async function main() {
     let users: Array<User> = await getUsers();
-    console.log('Users', users);
     let comments: Array<Comment> = await getComments();
+
+    console.log('Users', users);
     console.log('Comments', comments);
 }
 
