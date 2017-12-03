@@ -11,7 +11,6 @@ async function main() {
     let users: Array<User> = await getUsers();
     let posts: Array<Post> = await getPosts();
     let comments: Array<Comment> = await getComments();
-
     console.log('Users', users);
     console.log('Posts', posts);
     console.log('Comments', comments);
