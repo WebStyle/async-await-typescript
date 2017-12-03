@@ -25,7 +25,7 @@ async function getComments(): Promise<Array<Comment>> {
     let comments: Array<Comment> = [];
     response
         .data
-        .forEach((item: Comment) => comments.push(new Comment(item.id, item.name, item.body, item.email, item.postId)));
+        .forEach((comment: Comment) => comments.push(new Comment(comment.id, comment.name, comment.body, comment.email, comment.postId)));
     return comments;
 }
 
