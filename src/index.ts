@@ -2,6 +2,10 @@ import axios, { AxiosResponse } from 'axios';
 import Comment from "./mappers/Comment";
 import User from "./mappers/User";
 
+/**
+ * Entry point
+ * @returns {Promise<void>}
+ */
 async function main() {
     let users: Array<User> = await getUsers();
     let comments: Array<Comment> = await getComments();
@@ -10,7 +14,10 @@ async function main() {
     console.log('Comments', comments);
 }
 
-
+/**
+ * Load users
+ * @returns {Promise<Array<User>>}
+ */
 async function getUsers(): Promise<Array<User>> {
     let response: AxiosResponse = await axios.get('https://jsonplaceholder.typicode.com/users');
     let users: Array<User> = [];
@@ -20,7 +27,10 @@ async function getUsers(): Promise<Array<User>> {
     return users;
 }
 
-
+/**
+ * Load comments
+ * @returns {Promise<Array<Comment>>}
+ */
 async function getComments(): Promise<Array<Comment>> {
     let response: AxiosResponse = await axios.get('https://jsonplaceholder.typicode.com/comments');
     let comments: Array<Comment> = [];
@@ -30,6 +40,9 @@ async function getComments(): Promise<Array<Comment>> {
     return comments;
 }
 
+/**
+ * Starting app
+ */
 main();
 
 
