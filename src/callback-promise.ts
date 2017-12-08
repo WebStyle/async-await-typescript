@@ -1,4 +1,4 @@
-import axios, {AxiosResponse} from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import Comment from './mappers/Comment';
 import User from './mappers/User';
 import Post from './mappers/Post';
@@ -37,7 +37,7 @@ function getUsers(callback: Function) {
  * @param {Function} callback
  */
 function getComments(callback: Function) {
-    axios.get('https://jsonplaceholder.typicode.com/comments').then(function (response) {
+    axios.get('https://jsonplaceholder.typicode.com/comments').then(function(response) {
         let comments: Array<Comment> = [];
         response
             .data
@@ -52,7 +52,7 @@ function getComments(callback: Function) {
  * @param {Function} callback
  */
 function getPosts(callback: Function) {
-    axios.get('https://jsonplaceholder.typicode.com/posts').then(function (response) {
+    axios.get('https://jsonplaceholder.typicode.com/posts').then(function(response) {
         let posts: Array<Post> = [];
         response
             .data

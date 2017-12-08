@@ -1,4 +1,4 @@
-import axios, {AxiosResponse} from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import Comment from './mappers/Comment';
 import User from './mappers/User';
 import Post from './mappers/Post';
