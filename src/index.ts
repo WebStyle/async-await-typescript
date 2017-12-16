@@ -58,6 +58,8 @@ async function getPosts(): Promise<Array<Post>> {
 /**
  * Starting app
  */
-main();
+main()
+    .then(() => console.log("the end"))
+    .catch((error) => console.log(error.message));
 
 
